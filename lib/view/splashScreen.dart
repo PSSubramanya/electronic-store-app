@@ -1,3 +1,4 @@
+import 'package:electronic_store_app/view/authentication/loginPage.dart';
 import 'package:electronic_store_app/view/homePage.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -22,8 +23,10 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   route() {
+    // Navigator.pushReplacement(
+    //     context, MaterialPageRoute(builder: (context) => HomePage()));
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => HomePage()));
+        context, MaterialPageRoute(builder: (context) => LoginPage()));
   }
 
   @override

@@ -1,4 +1,6 @@
-import 'package:electronic_store_app/view/loginPage.dart';
+// import 'package:electronic_store_app/view/loginPage.dart';
+import 'package:electronic_store_app/view/authentication/loginPage.dart';
+import 'package:electronic_store_app/view/itemCategory/itemType/itemInfoButtonPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -80,9 +82,18 @@ class HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+                  // trailing: IconButton(
+                  //     icon: Icon(
+                  //       Icons.add,
+                  //       color: Color(0xFFD81B60),
+                  //       size: 30.0,
+                  //     ),
+                  //     onPressed: null),
                 ),
               ),
             ),
+
+            //FROM HERE...
             Padding(
               padding: const EdgeInsets.only(left: 0.0),
               child: Row(
@@ -168,7 +179,7 @@ class HomePageState extends State<HomePage> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                'Mobiles',
+                                'Equipments',
                                 style: GoogleFonts.montserrat(
                                   textStyle: TextStyle(
                                     // color: Color(0xFF8C9EFF),
@@ -219,14 +230,15 @@ class HomePageState extends State<HomePage> {
                             children: <Widget>[
                               Image.asset(
                                 // "assets/images/tech3.png",
-                                "assets/images/tech6.png",
+                                // "assets/images/tech6.png",
+                                "assets/images/firstaidkit.png",
                                 height: 60.0,
                                 width: 60.0,
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                  'Equipments',
+                                  'Medical Kit',
                                   style: GoogleFonts.montserrat(
                                     textStyle: TextStyle(
                                       // color: Color(0xFF8C9EFF),
@@ -275,7 +287,7 @@ class HomePageState extends State<HomePage> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                'Records',
+                                'Stationary',
                                 style: GoogleFonts.montserrat(
                                   textStyle: TextStyle(
                                     // color: Color(0xFF8C9EFF),
@@ -295,6 +307,9 @@ class HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            //TILL HERE...
+
+            //ADD BUTTON
             Padding(
               padding: const EdgeInsets.only(
                   top: 30.0, left: 85.0, right: 85.0, bottom: 10.0),
@@ -308,7 +323,7 @@ class HomePageState extends State<HomePage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LoginPage(),
+                            builder: (context) => ItemInfoButtonsPage(),
                           ));
                     },
                     shape: RoundedRectangleBorder(

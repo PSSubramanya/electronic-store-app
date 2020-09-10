@@ -4,18 +4,19 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:animated_card/animated_card.dart';
+import 'package:electronic_store_app/view/homePage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:toast/toast.dart';
 
-class LoginPage extends StatefulWidget {
+class RegistrationPage extends StatefulWidget {
   @override
-  State createState() => new LoginPageState();
+  State createState() => new RegistrationPageState();
 }
 
-class LoginPageState extends State<LoginPage> {
+class RegistrationPageState extends State<RegistrationPage> {
   TextEditingController _emailLoginTextController = TextEditingController();
   TextEditingController _passwordLoginTextController = TextEditingController();
 
@@ -85,22 +86,24 @@ class LoginPageState extends State<LoginPage> {
             children: <Widget>[
               Align(
                 alignment: Alignment.topCenter,
-                child: Container(
-                  child: Image.asset(
-                    "assets/images/techbg5.jpg",
-                    height: 160.0,
-                    width: MediaQuery.of(context).size.width),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 40.0),
+                  child: Container(
+                    child: Image.asset("assets/images/techbg1.jpg",
+                        height: 180.0, 
+                        width: MediaQuery.of(context).size.width*0.8),
                   ),
                 ),
+              ),
               // ),
-              Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.shortestSide * 0.15),
+              Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.shortestSide * 0.1),
+                child: Align(
+                  alignment: Alignment.topCenter,
                   child: Container(
                     child: Text(
-                      'Login',
+                      'Register',
                       style: GoogleFonts.raleway(
                         textStyle: TextStyle(
                           color: Colors.black,
@@ -226,7 +229,7 @@ class LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(25.0),
                           side: BorderSide(color: Colors.white)),
                       child: Text(
-                        'Login',
+                        'Sign up',
                         style: GoogleFonts.lato(
                           textStyle: TextStyle(
                             color: Colors.black,
@@ -247,16 +250,16 @@ class LoginPageState extends State<LoginPage> {
                   width: 200.0,
                   child: FlatButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => RegisterPage(),
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ),
+                        );
                       },
                       shape: RoundedRectangleBorder(),
                       child: Text(
-                        'SignUp',
+                        'Login',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.lato(
                           textStyle: TextStyle(
@@ -276,10 +279,10 @@ class LoginPageState extends State<LoginPage> {
                 child: Container(
                     width: 200.0,
                     child: Text(
-                      "Please register if you haven't registered yet",
+                      "Already have an account? Then Login",
                       style: GoogleFonts.lato(
                         textStyle: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           letterSpacing: .4,
                           fontSize: 14.0,
                           fontWeight: FontWeight.w600,
@@ -287,15 +290,6 @@ class LoginPageState extends State<LoginPage> {
                       ),
                       textAlign: TextAlign.center,
                     )),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.shortestSide * 0.06,
-                    bottom: MediaQuery.of(context).size.height * 0.6),
-                child: Container(
-                  width: 250.0,
-                  height: 60.0,
-                ),
               ),
             ],
           ),
