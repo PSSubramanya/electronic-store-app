@@ -1,3 +1,4 @@
+import 'package:electronic_store_app/view/itemCategory/itemType/viewRegister.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -89,41 +90,50 @@ class ItemInfoButtonsPageState extends State<ItemInfoButtonsPage> {
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  elevation: 8.0,
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(10),
-                        topRight: Radius.circular(10),
-                        bottomLeft: Radius.circular(10),
-                        topLeft: Radius.circular(10)),
-                  ),
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Image.asset(
-                          "assets/images/addtorecord.png",
-                          height: 60.0,
-                          width: 60.0,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0, left: 35.0),
-                          child: Text(
-                            'Add a new entry',
-                            style: GoogleFonts.montserrat(
-                              textStyle: TextStyle(
-                                // color: Color(0xFF8C9EFF),
-                                color: Colors.red,
-                                letterSpacing: .4,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.w500,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ViewRegister()));
+                  },
+                  child: Card(
+                    elevation: 8.0,
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          topLeft: Radius.circular(10)),
+                    ),
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Image.asset(
+                            "assets/images/addtorecord.png",
+                            height: 60.0,
+                            width: 60.0,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(top: 8.0, left: 35.0),
+                            child: Text(
+                              'Add a new entry',
+                              style: GoogleFonts.montserrat(
+                                textStyle: TextStyle(
+                                  // color: Color(0xFF8C9EFF),
+                                  color: Colors.red,
+                                  letterSpacing: .4,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
