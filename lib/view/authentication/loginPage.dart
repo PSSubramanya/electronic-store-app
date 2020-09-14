@@ -5,11 +5,14 @@ import 'dart:io';
 
 import 'package:animated_card/animated_card.dart';
 import 'package:electronic_store_app/view/authentication/registrationPage.dart';
+import 'package:flushbar/flushbar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:toast/toast.dart';
+
+import 'dart:async';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -19,6 +22,24 @@ class LoginPage extends StatefulWidget {
 class LoginPageState extends State<LoginPage> {
   TextEditingController _emailLoginTextController = TextEditingController();
   TextEditingController _passwordLoginTextController = TextEditingController();
+
+  startTime() async {
+    var duration = new Duration(seconds: 3);
+    return new Timer(duration, route);
+  }
+
+  route() {
+    // Navigator.pushReplacement(
+    //     context, MaterialPageRoute(builder: (context) => HomePage()));
+    // Navigator.pushReplacement(
+    //     context, MaterialPageRoute(builder: (context) => LoginPage()));
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => RegistrationPage(),
+      ),
+    );
+  }
 
   final formkey = new GlobalKey<FormState>();
   // SharedPreferences _sharedPreferences;
@@ -220,12 +241,26 @@ class LoginPageState extends State<LoginPage> {
                       // color: Colors.redAccent,
                       onPressed: () {
                         // loginWithCreds();
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => RegistrationPage(),
+
+                        Flushbar(
+                          message: "Logged in successfully!",
+                          icon: Icon(
+                            Icons.check,
+                            size: 28.0,
+                            color: Colors.green,
                           ),
-                        );
+                          duration: Duration(seconds: 3),
+                          leftBarIndicatorColor: Colors.green,
+                        )..show(context);
+
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => RegistrationPage(),
+                        //   ),
+                        // );
+
+                        startTime();
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),

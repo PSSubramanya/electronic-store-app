@@ -131,7 +131,7 @@ class HomePageState extends State<HomePage> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                  'Laptops',
+                                  'Gadgets',
                                   style: GoogleFonts.montserrat(
                                     textStyle: TextStyle(
                                       // color: Color(0xFF8C9EFF),
@@ -307,6 +307,122 @@ class HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    height: 160.0,
+                    width: 165.0,
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => EveningMedicine()));
+                      },
+                      child: Card(
+                        elevation: 8.0,
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                              bottomLeft: Radius.circular(10),
+                              topLeft: Radius.circular(10)),
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Image.asset(
+                                // "assets/images/tech3.png",
+                                // "assets/images/tech6.png",
+                                "assets/images/tech6.png",
+                                height: 60.0,
+                                width: 60.0,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Components',
+                                  style: GoogleFonts.montserrat(
+                                    textStyle: TextStyle(
+                                      // color: Color(0xFF8C9EFF),
+                                      color: Colors.red,
+                                      letterSpacing: .4,
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 160.0,
+                    width: 165.0,
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => EveningMedicine()));
+                      },
+                      child: Card(
+                        elevation: 8.0,
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                              bottomLeft: Radius.circular(10),
+                              topLeft: Radius.circular(10)),
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Image.asset(
+                                // "assets/images/tech3.png",
+                                // "assets/images/tech6.png",
+                                "assets/images/techother2.png",
+
+                                // "assets/images/techother.png",
+                                height: 60.0,
+                                width: 60.0,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Others',
+                                  style: GoogleFonts.montserrat(
+                                    textStyle: TextStyle(
+                                      // color: Color(0xFF8C9EFF),
+                                      color: Colors.red,
+                                      letterSpacing: .4,
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
             //TILL HERE...
 
             //ADD BUTTON

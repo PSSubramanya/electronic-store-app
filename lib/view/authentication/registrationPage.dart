@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:animated_card/animated_card.dart';
 import 'package:electronic_store_app/view/homePage.dart';
+import 'package:electronic_store_app/view/userInfo/userInfoRegister.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -90,8 +91,8 @@ class RegistrationPageState extends State<RegistrationPage> {
                   padding: const EdgeInsets.only(top: 40.0),
                   child: Container(
                     child: Image.asset("assets/images/techbg1.jpg",
-                        height: 180.0, 
-                        width: MediaQuery.of(context).size.width*0.8),
+                        height: 180.0,
+                        width: MediaQuery.of(context).size.width * 0.8),
                   ),
                 ),
               ),
@@ -224,6 +225,12 @@ class RegistrationPageState extends State<RegistrationPage> {
                       // color: Colors.redAccent,
                       onPressed: () {
                         // loginWithCreds();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => UserInfoEntry(),
+                          ),
+                        );
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
