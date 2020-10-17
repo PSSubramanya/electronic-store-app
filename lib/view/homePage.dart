@@ -1,5 +1,6 @@
 // import 'package:electronic_store_app/view/loginPage.dart';
 import 'package:electronic_store_app/view/authentication/loginPage.dart';
+import 'package:electronic_store_app/view/forms/itemCategory.dart';
 import 'package:electronic_store_app/view/itemCategory/itemType/itemInfoButtonPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -104,10 +105,10 @@ class HomePageState extends State<HomePage> {
                     width: 165.0,
                     child: GestureDetector(
                       onTap: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => MorningMedicine()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ItemCategory()));
                       },
                       child: Card(
                         elevation: 8.0,
