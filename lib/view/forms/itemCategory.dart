@@ -1,3 +1,4 @@
+import 'package:electronic_store_app/view/forms/itemCategoryName.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -9,10 +10,12 @@ class ItemCategory extends StatefulWidget {
 
 class ItemCategoryState extends State<ItemCategory> {
   Icon tick = new Icon(Icons.check_circle_outline);
+
+  List itemNames = ['Laptop', 'Tablet'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       body: Column(
         children: [
           Padding(
@@ -189,9 +192,9 @@ class ItemCategoryState extends State<ItemCategory> {
                                     color: Color(0xFF58EE9E),
                                     iconSize: 60.0,
                                     onPressed: () {
-                                      setState(() {
-                                        tick = Icon(Icons.check_circle);
-                                      });
+                                      // setState(() {
+                                      //   tick = Icon(Icons.check_circle);
+                                      // });
                                     }),
                               ],
                             ),
@@ -200,37 +203,105 @@ class ItemCategoryState extends State<ItemCategory> {
                   }),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 55.0),
-            child: Container(
-              color: Colors.white,
-              height: 110.0,
-              width: MediaQuery.of(context).size.width,
-              child: Image.asset(
-                'assets/images/gadget.png',
-                height: 100,
-                width: 100,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              color: Colors.white,
-              width: MediaQuery.of(context).size.width,
-              child: Center(
-                child: Text(
-                  'No Items Added',
-                  style: GoogleFonts.raleway(
-                    color: Colors.black,
-                    letterSpacing: .4,
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w600,
+          itemNames.length == 0
+              ? Container(
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 55.0),
+                        child: Container(
+                          color: Colors.white,
+                          height: 110.0,
+                          width: MediaQuery.of(context).size.width,
+                          child: Image.asset(
+                            'assets/images/gadget.png',
+                            height: 100,
+                            width: 100,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20.0),
+                        child: Container(
+                          color: Colors.white,
+                          width: MediaQuery.of(context).size.width,
+                          child: Center(
+                            child: Text(
+                              'No Items Added',
+                              style: GoogleFonts.raleway(
+                                color: Colors.black,
+                                letterSpacing: .4,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
-                ),
-              ),
-            ),
-          ),
+                )
+              : GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ItemCategoryName(),
+                        ));
+                  },
+                  child: ListView.builder(
+                      physics: ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: itemNames.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                              top: 5.0, left: 3.0, right: 3.0),
+                          child: Container(
+                            // color: Colors.red,
+                            height: 70.0,
+                            decoration: BoxDecoration(
+                                color: index % 2 == 0
+                                    ? Color(0xFF8C9EFF)
+                                    : Colors.white,
+                                // borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                border: Border.all(color: Colors.blueAccent)),
+                            child: ListTile(
+                              leading: Padding(
+                                padding: const EdgeInsets.only(top: 6.0),
+                                child: Text(
+                                  (index + 1).toString(),
+                                  style: GoogleFonts.raleway(
+                                    textStyle: TextStyle(
+                                      color: index % 2 == 0
+                                          ? Colors.white
+                                          : Colors.black,
+                                      letterSpacing: .4,
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              title: Text(
+                                itemNames[index],
+                                style: GoogleFonts.raleway(
+                                  textStyle: TextStyle(
+                                    color: index % 2 == 0
+                                        ? Colors.white
+                                        : Colors.black,
+                                    letterSpacing: .4,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+                )
         ],
       ),
     );
